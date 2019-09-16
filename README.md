@@ -2,7 +2,9 @@
 
 A Python implementation of Cocks' identity-based encryption (IBE) scheme [1].
 
-Cocks' scheme is distinct in that it is based on the quadratic residuosity hardness problem; it avoids the use of bilinear pairings common in schemes, e.g. Boneh-Franklin [2].
+Cocks' scheme is distinct in that it is based on the quadratic residuosity hardness problem, rahter than bilinear pairings common in other IBE schemes, e.g. Boneh-Franklin [2]. 
+
+As such, no dependencies are required for pairing-based cryptography; only gmpy2 is sufficient.
 
 ## Usage
 
@@ -28,11 +30,13 @@ c = cocks.encrypt(b"test", a)
 msg = cocks.decrypt(c, r, a)  # => b"test"
 ```
 
+Some tests can be found in ```test_pycocks.py```, which are executable using ```pytest```.
+
 ## Requirements
 
-gmpy2 (tested v2.0.8)
+- gmpy2 (tested v2.0.8)
 
 ## References
 
 1. [C. Cocks, *"An identity based encryption scheme based on quadratic residues"*, Proceedings of the IMA International Conference on Cryptography and Coding. Springer, 2001.](https://link.springer.com/chapter/10.1007/3-540-45325-3_32)
-2. [D. Boneh and M. Franklin, *"Identity-based encryption from the Weil pairing"*, Annual International Cryptology Conference. Springer, 2011.](https://search.proquest.com/docview/918831320?pq-origsite=gscholar)
+2. [D. Boneh and M. Franklin, *"Identity-based encryption from the Weil pairing"*, Annual International Cryptology Conference. Springer, 2001.](https://search.proquest.com/docview/918831320?pq-origsite=gscholar)
