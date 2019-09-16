@@ -2,9 +2,9 @@
 
 A Python implementation of Cocks' identity-based encryption (IBE) scheme [1].
 
-Cocks' scheme is distinct in that it is based on the quadratic residuosity hardness problem, rahter than bilinear pairings common in other IBE schemes, e.g. Boneh-Franklin [2]. 
+Cocks' scheme is distinct in that it is based on the quadratic residuosity hardness problem, rather than bilinear pairings used prevalently in other IBE schemes, e.g. Boneh-Franklin [2]. 
 
-As such, no dependencies are required for pairing-based cryptography; only gmpy2 is sufficient.
+As such, no dependencies are required for performing pairing-based cryptography; only gmpy2 is sufficient.
 
 ## Usage
 
@@ -30,7 +30,9 @@ c = cocks.encrypt(b"test", a)
 msg = cocks.decrypt(c, r, a)  # => b"test"
 ```
 
-Some tests can be found in ```test_pycocks.py```, which are executable using ```pytest```.
+## Tests
+
+Some tests can be found in ```test_pycocks.py```, which can be executed using ```pytest```.
 
 ## Requirements
 
