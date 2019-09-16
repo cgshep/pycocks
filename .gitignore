@@ -5,3 +5,4 @@
 __pycache*
 dist
 *.egg-info
+.pytest*
