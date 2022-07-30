@@ -41,7 +41,9 @@ r, a = cocks_pkg.extract("User1")
 from pycocks.cocks import Cocks
 
 # Instantiate the client
-cocks = Cocks(cocks_pkg.n)  # Must use the same modulus, n, as the PKG
+#
+# Must use the same modulus, n, as the PKG
+cocks = Cocks(cocks_pkg.n)  
 
 # Encryption example
 #
