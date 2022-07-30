@@ -6,7 +6,7 @@
    <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pycocks?label=license">
 </p>
 
-A Python implementation of [Cocks' identity-based encryption (IBE) scheme](https://en.wikipedia.org/wiki/Cocks_IBE_scheme) [1].
+A Python implementation of [Cocks' identity-based encryption (IBE) scheme](https://en.wikipedia.org/wiki/Cocks_IBE_scheme) [1]. IBE allows strings to be used directly as public encryption keys.
 
 Cocks' scheme uses the quadratic residuosity hardness problem, rather than bilinear pairings with other IBE schemes, e.g. Boneh-Franklin [2]. 
 
@@ -27,7 +27,9 @@ from pycocks.cocks import CocksPKG
 # Instantiate the PKG
 cocks_pkg = CocksPKG()   # Optional param.: bit size (default = 2048)
 
-# Extract private key, r, from an identity string.
+# Extract private key, r, from an identity string. This is
+# "User1" in this instance.
+#
 # A transformed ID string, a, is also returned that is
 # required for encryption and decryption by the client.
 r, a = cocks_pkg.extract("User1")
