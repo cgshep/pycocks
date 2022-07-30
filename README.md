@@ -43,6 +43,20 @@ Use ```pytest``` to execute tests in ```tests/test_pycocks.py```
 
 - gmpy2 (tested v2.0.8)
 
+## Citation
+
+Please use the following if you use pycocks in a publication:
+
+```bibtex
+@software{shepherd:pycocks,
+      title={pycocks},
+      version={1.0},
+      author={Carlton Shepherd},
+      year={2022},
+      url={https://github.com/cgshep/pycocks}
+}
+```
+
 ## References
 
 1. [C. Cocks, *"An identity based encryption scheme based on quadratic residues"*, Proceedings of the IMA International Conference on Cryptography and Coding. Springer, 2001.](https://link.springer.com/chapter/10.1007/3-540-45325-3_32)
