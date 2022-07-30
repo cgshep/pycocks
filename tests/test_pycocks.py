@@ -1,20 +1,28 @@
 import gmpy2
 import pytest
 
-from cocks.utils import InvalidIdentityString
-from cocks.cocks import CocksPKG, Cocks
+from pycocks.utils import InvalidIdentityString
+from pycocks.cocks import CocksPKG, Cocks
+
 
 def test_encrypt_decrypt():
     m1 = bytes(b"Hello")
     m2 = bytes("Hello world", encoding="utf8")
     m3 = bytes(12345)
     m4 = bytes(b"aaaaaaaaaaa bbbbbbbbbbbb cccccccccc dddddddddd")
-    m5 = bytes("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", encoding="utf8")
-
+    m5 = bytes("Lorem ipsum dolor sit amet, consectetur"\
+               "adipiscing elit, sed do eiusmod tempor incididunt"\
+               "ut labore et dolore magna aliqua. Ut enim ad"\
+               "minim veniam, quis nostrud exercitation ullamco"\
+               "laboris nisi ut aliquip ex ea commodo consequat."\
+               "Duis aute irure dolor in reprehenderit in"\
+               "voluptate velit esse cillum dolore eu fugiat "\
+               "nulla pariatur. Excepteur sint occaecat cupidatat"\
+               "non proident, sunt in culpa qui officia deserunt"\
+               "mollit anim id est laborum.", encoding="utf8")
     cocks_pkg = CocksPKG()
     test_id = "test"
     r, a = cocks_pkg.extract(test_id)
-
     cocks = Cocks(cocks_pkg.n)
     c_list = cocks.encrypt(m1, a)
     assert m1 == cocks.decrypt(c_list, r, a)
@@ -26,6 +34,7 @@ def test_encrypt_decrypt():
     assert m4 == cocks.decrypt(c_list, r, a)
     c_list = cocks.encrypt(m5, a)
     assert m5 == cocks.decrypt(c_list, r, a)
+
 
 def test_pkg_modulus():
     # Test modulus bit lengths.
@@ -40,6 +49,7 @@ def test_pkg_modulus():
     assert cocks_pkg.n.bit_length() == 3072
     cocks_pkg = CocksPKG(4096)
     assert cocks_pkg.n.bit_length() == 4096
+
 
 def test_pkg_extract():
     cocks_pkg = CocksPKG()

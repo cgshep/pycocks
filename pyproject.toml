@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pycocks"
+version = "1.0"
+authors = [
+  { name="Carlton Shepherd", email="carlton@linux.com" },
+]
+description = "A Python implementation of Cocks' identity-based encryption (IBE) scheme."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.3"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Security :: Cryptography"
+]
+
+dependencies = [
+    "gmpy2>=2.0.0"
+]
+
+[project.optional-dependencies]
+tests = [
+  'pytest>=7.0',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/cgshep/pycocks"
+"Bug Tracker" = "https://github.com/cgshep/pycocks/issues"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
