@@ -8,9 +8,7 @@
 
 A Python implementation of [Cocks' identity-based encryption (IBE) scheme](https://en.wikipedia.org/wiki/Cocks_IBE_scheme) [1]. IBE allows strings to be used directly as public encryption keys.
 
-Cocks' scheme uses the quadratic residuosity hardness problem, rather than bilinear pairings with other IBE schemes, e.g. Boneh-Franklin [2]. 
-
-As a result, no additional dependencies are required for pairing-based cryptography; only gmpy2 is sufficient.
+Cocks' scheme uses the quadratic residuosity hardness problem, rather than bilinear pairings with other IBE schemes, e.g. Boneh-Franklin [2]. As a result, no additional dependencies are required for pairing-based cryptography; only gmpy2 is sufficient.
 
 ## Usage
 
