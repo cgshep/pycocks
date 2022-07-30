@@ -2,6 +2,7 @@
 
 <p>
    <img alt="PyPI" src="https://img.shields.io/pypi/v/pycocks">
+   <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pycocks">
    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/pycocks">
    <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pycocks?label=license">
 </p>
