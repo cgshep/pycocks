@@ -1,4 +1,4 @@
-# PyCocks
+# pycocks
 
 <p>
    <img alt="PyPI" src="https://img.shields.io/pypi/v/pycocks">
