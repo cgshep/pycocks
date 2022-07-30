@@ -1,14 +1,20 @@
 # PyCocks
 
+<p>
+   <img alt="PyPI" src="https://img.shields.io/pypi/v/pycocks">
+   <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/pycocks">
+   <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pycocks?label=license">
+</p>
+
 A Python implementation of [Cocks' identity-based encryption (IBE) scheme](https://en.wikipedia.org/wiki/Cocks_IBE_scheme) [1].
 
 Cocks' scheme uses the quadratic residuosity hardness problem, rather than bilinear pairings with other IBE schemes, e.g. Boneh-Franklin [2]. 
 
-As a result, no dependencies are required for, say, pairing-based cryptography; only gmpy2 is sufficient.
+As a result, no additional dependencies are required for pairing-based cryptography; only gmpy2 is sufficient.
 
 ## Usage
 
-Two classes are used:
+Two classes are utilised for server- and client-side communication:
 
 1. (Server) ```CocksPKG```: implements the public key generator (PKG) for the scheme's initialisation and extracting secret keys from identity strings.
 
