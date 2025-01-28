@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "gmpy2>=2.0.0"
+    "gmpy2>=2.0.0", "bitarray"
 ]
 
 [project.optional-dependencies]
