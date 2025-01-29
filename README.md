@@ -5,6 +5,7 @@
    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pycocks">
    <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/pycocks">
    <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pycocks?label=license">
+   <img alt="pycocks Python build badge" src="https://github.com/cgshep/pycocks/actions/workflows/python-package.yml/badge.svg">
 </p>
 
 A Python implementation of [Cocks' identity-based encryption (IBE) scheme](https://en.wikipedia.org/wiki/Cocks_IBE_scheme) [1]. IBE allows strings to be used directly as public encryption keys.
