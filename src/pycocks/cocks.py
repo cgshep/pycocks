@@ -85,7 +85,6 @@ class CocksPKG:
         if id_str == "" or id_str is None:
             raise InvalidIdentityString("Invalid user identity string")
 
-        # Initial conversion:
         # Convert the string to an mpz using a helper function, and reduce it modulo n.
         a = hash_mpz(str_to_mpz(id_str), self.f) % self.n
 
@@ -136,7 +135,7 @@ class Cocks:
 
         c1 = (t1 + a * gmpy2.invert(t1, self.n)) % self.n
         c2 = (t2 - a * gmpy2.invert(t2, self.n)) % self.n
-        return (c1, c2)
+        return c1, c2
 
     def encrypt(self, msg, a):
         """
@@ -153,7 +152,7 @@ class Cocks:
             raise InvalidMessageType(
                 f"Expected msg with bytes type, but got {type(msg)}")
 
-        x = bitarray();
+        x = bitarray()
         x.frombytes(msg)
         # Transform message space: {0,1} -> {-1,1}
         msg_arr = [1 if b else -1 for b in x]
@@ -174,7 +173,7 @@ class Cocks:
         """
 
         r2 = (r * r) % self.n
-        x = c1 + 2 * r if r2 == a else c2 + 2 * r
+        x = c1 + 2 * r if r2 == a % self.n else c2 + 2 * r
         return gmpy2.jacobi(x, self.n)
 
     def decrypt(self, c_list, r, a):
