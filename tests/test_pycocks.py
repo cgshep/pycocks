@@ -62,3 +62,6 @@ def test_pkg_extract():
     _, a = cocks_pkg.extract("111111111111111111111111111111111111111111111111")
     assert gmpy2.jacobi(a, cocks_pkg.n) == 1
     pytest.raises(InvalidIdentityString, cocks_pkg.extract, "")
+    _, a = cocks_pkg.extract("0")
+    _, b = cocks_pkg.extract("1")
+    assert a != b
